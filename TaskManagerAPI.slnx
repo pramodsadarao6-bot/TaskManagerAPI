@@ -1,8 +1,5 @@
 <Solution>
-  <Folder Name="/Solution Items/">
-    <File Path="Dockerfile.txt" />
-    <File Path="dockerignore.txt" />
-  </Folder>
+  <Folder Name="/Solution Items/" />
   <Project Path="TaskManagerAPI.Tests/TaskManagerAPI.Tests.csproj" Id="fae37b9c-a27d-4c25-ad39-ae35d8ca4455" />
   <Project Path="TaskManagerAPI/TaskManagerAPI.csproj" />
 </Solution>
