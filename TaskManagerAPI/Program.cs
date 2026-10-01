@@ -23,15 +23,29 @@ builder.Services.AddScoped<ITaskRepository, TaskRepository>();
 builder.Services.AddScoped<TokenService>();
 
 // CORS Policy सेटअप
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.WithOrigins("http://localhost:5173", "https://taskmanagerapi-wec0.onrender.com")
+        policy.WithOrigins(
+                "http://localhost:5173",
+                "https://taskmanagerapi-wec0.onrender.com",
+                "https://taskmanagerfrontend-tljn.onrender.com"
+              )
               .AllowAnyMethod()
               .AllowAnyHeader();
     });
 });
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowReactApp", policy =>
+//    {
+//        policy.WithOrigins("http://localhost:5173", "https://taskmanagerapi-wec0.onrender.com")
+//              .AllowAnyMethod()
+//              .AllowAnyHeader();
+//    });
+//});
 
 // JWT Authentication सेटअप
 var jwtKey = builder.Configuration["Jwt:Key"]!;
